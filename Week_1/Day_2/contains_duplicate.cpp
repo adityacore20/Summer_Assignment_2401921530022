@@ -1,9 +1,7 @@
-#include <vector>
-#include <unordered_set>
-using namespace std;
+class Solution{
 
-
-bool containsDuplicate(const std::vector<int>& nums) {
+    public:
+    bool containsDuplicate(vector<int>& nums) {
     unordered_set<int> seen;
     for (int num : nums) {
         if (seen.count(num)) {
@@ -12,4 +10,5 @@ bool containsDuplicate(const std::vector<int>& nums) {
         seen.insert(num);
     }
     return false;
-}
+    }
+};

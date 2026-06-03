@@ -1,15 +1,14 @@
-#include <vector>
-#include <algorithm>
-using namespace std;
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int current_sum = nums[0];
+        int max_sum = nums[0];
 
-int maxSubArray(vector<int>& nums) {
-    int max_so_far = nums[0];
-    int current_max = nums[0];
-    
-    for (int i = 1; i < nums.size(); ++i) {
-        current_max =max(nums[i], current_max + nums[i]);
-        max_so_far = max(max_so_far, current_max);
+        for(int i = 1; i < nums.size(); i++) {
+            current_sum = max(nums[i], current_sum + nums[i]);
+            max_sum = max(max_sum, current_sum);
+        }
+
+        return max_sum;
     }
-    
-    return max_so_far;
-}
+};
